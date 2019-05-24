@@ -1,0 +1,2 @@
+#!/bin/bash
+connmanctl connect $(connmanctl services | grep $1 | sed 's/.*      //')
