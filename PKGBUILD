@@ -7,8 +7,8 @@ sha256sums=('SKIP')
 
 package(){
 	depends=('connman' 'wpa_supplicant')
-	install -D -t "$pkgdir/usr/bin" "connect"
-	install -D -t "$pkgdir/usr/bin" "show"
-	install -D -t "$pkgdir/etc/bash_completion.d/" "connect_completion.bash"
+	install -D -t "$pkgdir/usr/bin" "$srcdir/connect"
+	install -D -t "$pkgdir/usr/bin" "$srcdir/show"
+	install -D -t "$pkgdir/etc/bash_completion.d/" "$srcdir/connect_completion.bash"
 }
 
