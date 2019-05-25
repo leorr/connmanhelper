@@ -1,2 +1,2 @@
-#!/bin/dash
+#!/bin/bash
 connmanctl services | sed "s/      *.*//"  | sed "s/^.*. //"
