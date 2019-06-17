@@ -1,2 +1,2 @@
 #!/bin/bash
-connmanctl services | sed "s/      *.*//"  | sed "s/^.*. //"
+connmanctl services | sed "s/       *.*//" | sed "s/^.*. \ //" | sed "s/^*.* //"

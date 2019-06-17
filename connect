@@ -1,2 +1,8 @@
 #!/bin/bash
-connmanctl connect $(connmanctl services | grep $1 | sed 's/.*      //')
+if [ -d  "/var/lib/connman/$(connmanctl services | grep $1 | sed "s/.*$1 .//" | sed "s/^[ \t]*//")" ]
+then
+		connmanctl connect $(connmanctl services | grep $1 | sed "s/.*      //")
+else
+		sudo mkdir "/var/lib/connman/$(connmanctl services | grep $1 | sed "s/.*$1 .//" | sed "s/^[ \t]*//")";
+		connmanctl connect $(connmanctl services | grep $1 | sed "s/.*      //");
+fi
